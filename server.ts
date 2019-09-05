@@ -19,7 +19,7 @@ function paquetRecu(bodyString: string) {
 		// Création d'un nouvelle session
 		let s: Session = new Session(body.os, body.version, body.session, 6)
 		// Ajout à la liste
-		this.activeSessions.push(s)
+		activeSessions.push(s)
 		s.expiryEvent.on('expire', () => {
 			// Suppression de la liste en cas d'expiration
 			activeSessions.splice(activeSessions.findIndex(sess => sess.sessionId == s.sessionId), 1)
@@ -98,7 +98,7 @@ setInterval(() => {
 	systemInfo.then((infos: any[])=>{
 		sysInfo.setData({
 			titles: ['CPU (%)', `Memory (%)`, 'Bandwitch'],
-			data: [infos[0], 100-infos[1].freeMemPercentage, infos[2].total.outputMb.toString()]
+			data: [infos[0], 100-infos[1].freeMemPercentage, infos[2].total.outputMb]
 		})
 	}).catch((error)=>{
 		console.log(error)
