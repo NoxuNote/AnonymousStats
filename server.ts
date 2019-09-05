@@ -105,5 +105,5 @@ setInterval(() => {
 	})
 
 	screen.render()
-}, 1000)
+}, 2000)
 
