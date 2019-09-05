@@ -2,15 +2,19 @@
   "name": "node_server",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "build/server.js",
   "dependencies": {
-    "@slack/client": "^4.1.0",
-    "socket.io": "^2.1.0"
+    "blessed": "^0.1.81",
+    "blessed-contrib": "^4.8.16",
+    "node-os-utils": "^1.0.7"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/blessed": "^0.1.12",
+    "@types/node": "^12.7.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "./node_modules/.bin/tsc && node build/server.js"
   },
   "author": "",
   "license": "ISC"
