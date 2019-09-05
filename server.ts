@@ -2,7 +2,7 @@ import { Session, BodyPacket } from './types'
 const http = require('http')
 const osu = require('node-os-utils')
 
-const DEBUG: boolean = true
+const DEBUG: boolean = false
 
 const hostname = DEBUG ? 'localhost' : 'noxunote.fr';
 const port = 35200;
@@ -86,7 +86,7 @@ setInterval(() => {
 
 	userCount.setData({
 		titles: ['utilisateurs'],
-		data: [3]
+		data: [activeSessions.length]
 	})
 	
 	let systemInfo = Promise.all([
