@@ -146,15 +146,15 @@ async function generateRapport(): Promise<Rapport> {
 			"total": allSessions.length,
 			"bySystemActive": {
 				"darwin": activeSessions.filter(s=>s.os=="darwin").length,
-				"win32": activeSessions.filter(s=>s.os=="windows").length,
+				"win32": activeSessions.filter(s=>s.os=="win32").length,
 				"linux": activeSessions.filter(s=>s.os=="linux").length,
-				"other": activeSessions.filter(s=>!["darwin", "windows", "linux"].includes(s.os)).length
+				"other": activeSessions.filter(s=>!["darwin", "win32", "linux"].includes(s.os)).length
 			},
 			"bySystemAll": {
 				"darwin": allSessions.filter(s=>s.os=="darwin").length,
-				"win32": allSessions.filter(s=>s.os=="windows").length,
+				"win32": allSessions.filter(s=>s.os=="win32").length,
 				"linux": allSessions.filter(s=>s.os=="linux").length,
-				"other": allSessions.filter(s=>!["darwin", "windows", "linux"].includes(s.os)).length
+				"other": allSessions.filter(s=>!["darwin", "win32", "linux"].includes(s.os)).length
 			},
 			"byVersionActive": Array.from(allVersions).map((v: string) => {
 				return {
